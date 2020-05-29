@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ff6f5e;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fingers {
+    background-color: #f6d186;
+    width: 45px;
+    margin-right: 5px;
+    border-radius: 15px 15px 20px 20px;
+    position: relative;
+    animation: tap 1.5s ease-out infinite;
+}
+
+.fingers:nth-child(1) {
+    height: 130px;
+    top: 5px;
+}
+
+.fingers:nth-child(2) {
+    height: 150px;
+    animation-delay: 0.1s;
+}
+
+.fingers:nth-child(3) {
+    height: 170px;
+    bottom: 5px;
+    animation-delay: 0.2s;
+}
+
+.fingers:nth-child(4) {
+    height: 150px;
+    animation-delay: 0.3s;
+}
+
+#last {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    top: 10px;
+    background-color: #f6d186;
+    border-radius: 0px 15px 40px 0px;
+    animation: thumb 1.5s ease-in infinite;
+    animation-delay: 0.4s;
+}
+
+.nails {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px 50px 15px 15px;
+    background-color: #fcf7bb;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fingers::after, .fingers::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: #e6a157;
+    border-radius: 5px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.fingers::before {
+    top: 20px;
+}
+
+@keyframes tap {
+    0% {
+        transform: scaleY(1) translateY(0px);
+    }
+    20% {
+        transform: scaleY(0.8) translateY(-30px);
+    }
+    30% {
+        transform: scaleY(0.8) translateY(-30px);
+    }
+    40% {
+        transform: scaleY(1) translateY(0px);
+    }
+    100% {
+        transform: scaleY(1) translateY(0px);
+    }
+}
+@keyframes thumb {
+    0% {
+        transform: scaleY(1) translateY(0);
+    }
+    20% {
+        transform: scaleY(0.9) translateY(-20px);
+    }
+    30% {
+        transform: scaleY(0.9) translateY(-20px);
+    }
+    40% {
+        transform: scaleY(1) translateY(0);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}

@@ -1,0 +1,48 @@
+.container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: 5px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #222831;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #00adb5;
+    border-radius: 50%;
+    animation-name: bouncing;
+    animation-duration: 2s;
+    animation-timing-function: 
+        cubic-bezier(0.280, 0.840, 0.420, 1);
+    animation-iteration-count: infinite;  
+}
+
+@keyframes bouncing {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+    10% {
+        transform: scale(1.1, 0.9) translateY(0);
+    }
+    30% {
+        transform: scale(.9, 1.1) translateY(-100px);
+    }
+    48% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+    55% {
+        transform: scale(0.95, 1.05) translateY(-15px);
+    }
+    64% {
+        transform: scale(1, 1) translateY(0);
+    }
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}

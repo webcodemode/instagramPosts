@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+#navBar {
+    background-color: #212121;
+    border-bottom: 1px solid #212121;
+}
+#navBar ul {
+    display: flex;
+    justify-content: center;
+}
+li.menuElements {
+    background-color: #212121;
+}
+#navBar ul li a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+}
+#navBar ul li a:first-of-type {
+    text-align: center;
+}
+
+/* The dropmenu */
+#navBar ul li ul {
+    flex-direction: column;
+}
+#navBar ul li ul li a {
+    padding-left: 10px;
+    width: 100%;
+    text-align: left !important;
+}
+#navBar ul li ul li {
+    display: none;
+    background-color: #212121;
+    z-index: 1;
+    opacity: 0;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 14px;
+    padding: 20px 0 20px 0;
+}
+#navBar ul li:hover ul li {
+    display: flex;
+    animation: load 0.3s forwards;
+}
+@keyframes load {
+    0% {
+        transform: translateY(40px) scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+#navBar ul li ul li:first-child {
+    animation-delay: 0s;
+}
+#navBar ul li ul li:nth-child(2) {
+    animation-delay: 0.05s;
+}
+#navBar ul li ul li:nth-child(3) {
+    animation-delay: 0.1s;
+}
+#navBar ul li ul li:last-child {
+    animation-delay: 0.15s;
+}
+#navBar ul li {
+    list-style-type: none;
+    width: 200px;
+    height: 35px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* The line effect for the items from second navigation bar */
+
+#navBar ul .menuElements::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    transition: all 0.3s ease-in-out;
+}
+#navBar ul .menuElements:hover::before {
+    width: 100%;
+}
+.submenu li::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    transition: all 0.3s ease-in-out;
+}
+.submenu li:hover::before {
+    width: 100%;
+}

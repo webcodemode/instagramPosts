@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #f0a500;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 250px;
+    height: 400px;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.container:hover .card {
+    transform: scale(1.1);
+    filter: brightness(50%);
+}
+
+.productType {
+    color: grey;
+    transform: translateY(-10px);
+}
+
+.price {
+    font-size: 24px;
+    color: #cf7500;
+}
+
+.cartBtn, .wishlistBtn {
+    width: 150px;
+    height: 50px;
+    background-color: #cf7500;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    bottom: 55%;
+    transition: all 0.2s ease;
+}
+
+.wishlistBtn {
+    background-color: #f5f5f5;
+    color: black;
+    bottom: 35%;
+}
+
+.container:hover .cartBtn, .container:hover .wishlistBtn {
+    opacity: 1;
+    display: inline;
+}
+
+.cartBtn:active, .wishlistBtn:active {
+    transform: scale(0.90);
+}

@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  height: 10vh;
+  background: #c81912;
+  position: relative;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  position: fixed;
+  background: #c81912;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  clip-path: circle(0px at 90% -10%);
+  transition: all 0.5s ease-out;
+  pointer-events: none;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.bar {
+  width: 30px;
+  height: 5px;
+  background: white;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all 0.4s linear;
+}
+
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 2;
+}
+
+.navLinks.show {
+  clip-path: circle(1000px at 90% -10%);
+  pointer-events: all;
+}
+
+.navLinks li {
+  opacity: 0;
+}
+
+.navLinks li:nth-child(1) {
+  transition: all 0.5s ease 0.2s;
+}
+
+.navLinks li:nth-child(2) {
+  transition: all 0.5s ease 0.4s;
+}
+
+.navLinks li:nth-child(3) {
+  transition: all 0.5s ease 0.6s;
+}
+
+li.hide {
+  opacity: 1;
+}
+
+div.change:nth-child(1){
+  opacity: 0%;
+}
+
+div.change:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+div.change:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}

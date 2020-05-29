@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #00bf72, #a8eb12);
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    margin-bottom: -25px;
+}
+
+.container {
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.starsContainer {
+    position: relative;
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.starsContainer label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.starsContainer label::before, .starsContainer label::after {
+    content: '\f005';
+    font-family: fontAwesome;
+    display: block;
+    position: relative;
+    font-size: 50px;
+    color: silver;
+}
+
+.starsContainer label::after {
+    position: absolute;
+    color: #f3c623;
+    top: 0;
+    opacity: 0;
+    transition-duration: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
+}
+
+.starsContainer label:hover::after, 
+.starsContainer input:checked ~ label::after {
+    opacity: 1;
+}
+
+.starsContainer input {
+    display: none;
+}
+
+.emoji {
+    width: 100px;
+    height: 100px;
+    background-color: #fcbf1e;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+}
+
+.eye {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transition: 0.5s;
+}
+
+.eye:nth-child(2) {
+    left: 75%;
+}
+
+.mouth {
+    width: 25px;
+    height: 30px;
+    border-bottom: 3px solid black;
+    border-radius: 0%;
+    position: absolute;
+    top: 45%;
+    left: 37%;
+    transition: 0.5s;
+}

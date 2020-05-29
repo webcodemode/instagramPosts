@@ -1,0 +1,49 @@
+.container {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+
+  
+  #pile1,
+  #pile2,
+  #pile3 {
+    width: 24px;
+    height: 6px;
+    background-color: black;
+    border-radius: 2px;
+  }
+  
+  #pile1 {
+    transition: opacity 0.2s linear;
+  }
+  
+  .container:hover #pile1 {
+    opacity: 0%;
+  }
+  
+  #pile2 {
+    transition: all 0.2s linear;
+  }
+  
+  .container:hover #pile2 {
+    transform: rotate(45deg);
+  }
+  
+  #pile3 {
+    transition: all 0.2s linear;
+  }
+  
+  .container:hover #pile3 {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  

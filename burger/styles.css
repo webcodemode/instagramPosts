@@ -1,0 +1,271 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #274f35;
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    height: 200px;
+}
+
+.saladTomatoContainer {
+    display: flex;
+    width: 90px;
+    height: 5px;
+}
+
+.bottomBun {
+    width: 100px;
+    height: 25px;
+    border: 5px solid black;
+    border-radius: 3px 3px 20px 20px;
+    background-color: #f2ca97;
+    position: relative;
+    bottom: 500px;
+    animation: loader1 2s infinite linear;
+}
+
+.salad {
+    width: 40%;
+    height: 100%;
+    border: 5px solid black;
+    border-bottom: none;
+    border-top: none;
+    background-color: #6aa32b;
+    position: relative;
+    bottom: 500px;
+    animation: loader2 2s infinite linear;
+}
+
+.tomato {
+    width: 60%;
+    height: 100%;
+    background-color: #e22949;
+    border: 5px solid black;
+    border-bottom: none;
+    border-top: none;
+    position: relative;
+    bottom: 500px;
+    animation: loader3 2s infinite linear;
+}
+
+.meat {
+    width: 100px;
+    height: 25px;
+    border: 5px solid black;
+    background-color: #7a5335;
+    border-radius: 5px;
+    position: relative;
+    bottom: 500px;
+    animation: loader4 2s infinite linear;
+}
+
+.cheese {
+    width: 90px;
+    height: 5px;
+    border: 5px solid black;
+    border-bottom: none;
+    border-top: none;
+    background-color: #f8e71d;
+    position: relative;
+    bottom: 500px;
+    animation: loader5 2s infinite linear;
+}
+
+.cheeseDrop {
+    background-color: #f8e71d;
+    width: 15px;
+    height: 15px;
+    border: 5px solid black;
+    border-left: none;
+    border-top: none;
+    position: absolute;
+    border-radius: 20% 20% 40% 20%;
+    transform: rotate(45deg);
+    right: 20%;
+    top: 1px;
+    z-index: 1;
+    animation: drop 2s infinite linear;
+}
+
+.topBun {
+    width: 100px;
+    height: 40px;
+    border: 5px solid black;
+    border-radius: 50% 50% 5% 5%;
+    background-color: #f2ca97;
+    position: relative;
+    z-index: 2;
+    bottom: 500px;
+    animation: loader6 2s infinite linear;
+}
+
+.sesame1, .sesame2, .sesame3, .sesame4, .sesame5, .sesame6 {
+    width: 7px;
+    height: 3px;
+    background-color: #cea97a;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+}
+
+.sesame2 {
+    top: 70%;
+    left: 35%;
+}
+
+.sesame3 {
+    top: 35%;
+    left: 35%;
+}
+
+.sesame4 {
+    top: 40%;
+    left: 60%;
+}
+
+.sesame5 {
+    top: 60%;
+    left: 75%;
+}
+
+.sesame6 {
+    top: 55%;
+    left: 50%;
+}
+
+@keyframes loader1 {
+    0% {
+        bottom: 500px;
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    45% {
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+    67% {
+        height: 25px;
+    }
+    68% {
+        height: 20px;
+    }
+    70% {
+        height: 25px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes loader2 {
+    0% {
+        bottom: 500px;
+    }
+    10% {
+        bottom: 500px;
+    }
+    60% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes loader3 {
+    0% {
+        bottom: 500px;
+    }
+    15% {
+        bottom: 500px;
+    }
+    65% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes loader4 {
+    0% {
+        bottom: 500px;
+    }
+    20% {
+        bottom: 500px;
+    }
+    68% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes loader5 {
+    0% {
+        bottom: 500px;
+    }
+    25% {
+        bottom: 500px;
+    }
+    70% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes loader6 {
+    0% {
+        bottom: 500px;
+    }
+    30% {
+        bottom: 500px;
+    }
+    72% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+    }
+    70% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+        top: -5px;
+    }
+    85% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+        top: 1px;
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+        top: 1px;
+    }
+}

@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    cursor: url(rsz_cursor.png), auto;
+}
+
+.container {
+    margin: auto;
+    width: 240px;
+    height: 300px;
+    position: relative;
+}
+
+.catBody {
+    width: 180px;
+    height: 150px;
+    background-color: black;
+    border-radius: 60px 0 50px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.catHead {
+    width: 130px;
+    height: 130px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    z-index: 1;
+    border-radius: 60px 60px 0 0;
+}
+
+.catTail {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    border: 40px solid white;
+    border-left: 40px solid black;
+    position: absolute;
+    bottom: -9px;
+    left: 2px;
+    transform: rotate(-20deg);
+    z-index: -1;
+}
+
+.catTailEnd {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    left: -15px;
+    bottom: 98px;
+}
+
+.leftEye, .rightEye {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    top: 30%;
+    left: 12%;
+}
+
+.rightEye {
+    left: 58%;
+}
+
+.pupil {
+    width: 65%;
+    height: 65%;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ears {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid black;
+    border-bottom: 50px solid transparent;
+    position: relative;
+    bottom: 20px;
+}
+
+.ears::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid black;
+    border-bottom: 50px solid transparent;
+    position: absolute;
+    bottom: -50px;
+    right: -30px;
+}
+
+.nose {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #3f3f44;
+    position: absolute;
+    bottom: 42%;
+    right: 45%;
+    z-index: 1;
+}
+
+.mouth1, .mouth2 {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border: 3px solid black;
+    border-bottom: 3px solid #3f3f44;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: 35%;
+    right: 48.5%;
+}
+
+.mouth2 {
+    transform: rotate(45deg);
+    right: 39.2%;
+}

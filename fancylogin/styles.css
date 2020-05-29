@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top right, #00dbdf, #dc06e4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding: 0 15px 0 15px;
+    box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+}
+.form input {
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    color: #363636;
+    border: none;
+    background-color: #fff;
+    border-bottom: 2px solid #9b9b9b;
+    outline: none;
+}
+
+.form label {
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+.contentEmail, .contentPass {
+    position: absolute;
+    top: 25px;
+    color: #9b9b9b;
+    transition: all 0.3s ease;
+}
+
+.form input:focus+.labelEmail .contentEmail, 
+.form input:valid+.labelEmail .contentEmail {
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #333;
+}
+
+.form input:focus+.labelPass .contentPass,
+.form input:valid+.labelPass .contentPass {
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #333;
+}
+
+button {
+    background-image: linear-gradient(to bottom right, #04d6dd, #f606ff);
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-self: center;
+    margin-top: 30px;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(7px);
+}
+
+h1 {
+    align-self: center;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.faceContainer {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fcbf1e;
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.eye {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+.eye:nth-child(2) {
+    left: 75%;
+}
+.mouth {
+    width: 25px;
+    height: 30px;
+    border-bottom: 3px solid black;
+    border-radius: 0%;
+    position: absolute;
+    top: 45%;
+    left: 37%;
+}
+
+@keyframes first {
+    0% {
+        border-radius: 0%;
+    } 100% {
+        border-radius: 30%;
+    }
+}
+@keyframes second {
+    0% {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+    } 100% {
+        height: 2px;
+        width: 10px;
+        border-radius: 25%;
+    }
+}
+@keyframes last {
+    0% {
+        height: 2px;
+        width: 10px;
+        border-radius: 25%;
+    } 100% {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+    }
+}
+@keyframes lastLast {
+    0% {
+        border-radius: 30%;
+        border-bottom: 3px solid black;
+    } 100% {
+        border-radius: 30%;
+        border-bottom: 13px solid black;
+    }
+}

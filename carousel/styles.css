@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    width: 500px;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px 0 5px 0;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    z-index: 1;
+    top: 49%;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#prevBtn {
+    left: 3%;
+}
+
+#nextBtn {
+    right: 3%;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    color: #588da8;
+}
+
+
+
