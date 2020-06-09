@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b2031;
+    display: flex;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    top: 50px;
+}
+
+input {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: #3d3459;
+    border-radius: 60px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+input::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: #817d96;
+    transform: scale(0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+input:checked::before {
+    left: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 60px 30px #699ba9, 0 0 100px 60px #303f52;
+}
+
+.thread {
+    position: relative;
+    width: 5px;
+    height: 100px;
+    background-color: #323941;
+    left: 35px;
+    bottom: 60px;
+    z-index: -1;
+    animation: off 0.5s ease;
+}
+
+.threadShadow {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #39414a;
+    right: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.threadEnd {
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background-color: #3a309b;
+    bottom: 65px;
+    left: 25px;
+    border-radius: 20px 20px 10px 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: off 0.5s ease;
+}
+
+.threadEndShadow {
+    width: 0;
+    height: 0;
+    border-top: 30px solid #8378ff;
+    border-left: 25px solid transparent;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.container.on .threadEndShadow, .container.on .threadShadow{
+    opacity: 1;
+}
+
+.container.on .threadEnd, .container.on .thread {
+    animation: on 0.8s ease;
+}
+
+.container.on .threadEnd {
+    background-color: #695dff;
+}
+
+@keyframes on {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    65% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+    95% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes off {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
