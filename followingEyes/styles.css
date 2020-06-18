@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffc83f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyesContainer {
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eyes {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: blink 1.5s infinite;
+}
+
+.light {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-100%);
+}
+
+.pupil {
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.mouth {
+    background-color: #000;
+    width: 90px;
+    height: 60px;
+    border-radius: 10px 10px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.teeth {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tooth1, .tooth2 {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 5px 5px 20px 20px;
+}
+
+.tongue {
+    width: 60px;
+    height: 30px;
+    background-color: #ff5a00;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: 10px;
+}
+
+@keyframes blink {
+    0% {
+        height: 50px;
+    }
+    35% {
+        height: 50px;
+    }
+    45% {
+        height: 0px;
+    }
+    55% {
+        height: 50px;
+    }
+    100% {
+        height: 50px;
+    }
+}
+
