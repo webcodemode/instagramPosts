@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d304e;
+    display: flex;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    top: 50px;
+    display: flex;
+    width: 400px;
+    height: 500px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.am, .pm {
+    font-size: 50px;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+
+.am {
+    color: #eef0f2;
+}
+
+.pm {
+    color: #6f98ce;
+}
+
+.container.on .am {
+    color: #6f98ce;
+}
+
+.container.on .pm {
+    color: #eef0f2;
+}
+
+input {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: #83d8fe;
+    border-radius: 60px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+input:checked {
+    background-color: #739cd4;
+}
+
+input::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: #ffce96;
+    transform: scale(0.9);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    animation: day 0.4s ease;
+}
+
+.container.on input::before {
+    animation: night 0.4s ease;
+}
+
+input:checked::before {
+    left: 100px;
+    background-color: #fee3b4;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.clouds {
+    position: absolute;
+    width: 90px;
+    height: 8px;
+    background-color: #e1f7ff;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+#firstCloud {
+    top: 43%;
+    left: 40%;
+}
+
+#secondCloud {
+    top: 48%;
+    left: 35%;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+#thirdCloud {
+    top: 53%;
+    left: 45%;
+    transition: all 0.25s ease; 
+}
+
+#firstCloud::after, #secondCloud::after, #thirdCloud::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #dce7f6;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+#secondCloud::after {
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 35px;
+}
+
+#thirdCloud::after {
+    width: 6px;
+    height: 6px;
+    left: -40px;
+    top: 10px;
+}
+
+.container.on .clouds {
+    width: 7px;
+    height: 7px;
+    background-color: #dce7f6;
+}
+
+.container.on #secondCloud {
+    width: 10px;
+    height: 10px;
+    left: 125px;
+}
+
+.container.on #thirdCloud {
+    width: 8px;
+    height: 8px;
+}
+
+.container.on #firstCloud::after, .container.on #secondCloud::after, .container.on #thirdCloud::after {
+    opacity: 1;
+}
+
+.crater {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e9cda5;
+    position: absolute;
+    right: 125px;
+    top: 225px;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.crater::after, .crater::before {
+    content: "";
+    position: absolute;
+    background-color: #e9cda5;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    right: 40px;
+}
+
+.crater::before {
+    width: 15px;
+    height: 15px;
+    top: 35px;
+    right: 15px;
+}
+
+.container.on .crater {
+    opacity: 1;
+    animation: moon 0.5s ease;
+}
+
+@keyframes night {
+    0% {
+        left: 0px;
+    }
+    45% {
+        left: -5px;
+    }
+    80% {
+        left: 105px;
+    }
+    100% {
+        left: 100px;
+    }
+}
+
+@keyframes day {
+    0% {
+        left: 100px;
+    }
+    45% {
+        left: 105px;
+    }
+    80% {
+        left: -5px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes moon {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
